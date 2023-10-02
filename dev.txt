@@ -1,0 +1,4 @@
+# Contains development specific requirements and imports common requirements
+flake8==5.0.4
+pylint==2.15.10
+-r common.txt

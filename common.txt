@@ -1,0 +1,2 @@
+# Contains common requirements
+tweepy==4.14.0
