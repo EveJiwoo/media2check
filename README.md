@@ -41,21 +41,24 @@ Source check was done by comparing well-established news outlets. Using many sou
 Coding to check for text similarity, we used Python library spaCy because it is open source. There are better API options with higher accuracy and more functionalities but we chose not to use because there is cost per processing. 
 SNS post texts are compared to many articles produced by news outlets. Just like plagiarism detection, our goal is to find how similar the text is with articles from news outlets. Score for text similarity ranges from [0, 1]. If the score is above a certain threshold, we can say that this post is similar to a reliable news source and it is okay to pass. 
 
-<p align="center">
-  <img src="https://github.com/media2check/media2check/assets/145739444/489e9f42-973f-46b0-92e1-e00a2edc208f" width = "80%" >
-</p>
+
 
 It is important to find the original uploader of posts and determine credentials and expertise in the subject matter. Anonymous or pseudonymous sources are given low scores to check further. X (formerly Twitter) provides such an API to determine the original uploader of a post. Using this information, original accounts can be found and apply the scoring model for reliability as well.
 
-Fake news spread patterns are different from natural ones. From the paper ["Fake news propagates differently from real news even at early stages of spreading"](https://epjdatascience.springeropen.com/articles/10.1140/epjds/s13688-020-00224-z), it shows the difference in nodes. 
+Fake news spread patterns are different from natural ones. From the paper by Zhao, Z., Zhao, J., Sano, Y. et al. ["Fake news propagates differently from real news even at early stages of spreading"](https://rdcu.be/dnJuY) EPJ Data Sci. 9, 7 (2020), it shows the difference in nodes. 
 
 <p align="center">
   <img src="https://github.com/media2check/media2check/assets/145739444/5c4e2faa-f969-4eaa-9ad6-35f3bf5c315d" width = "60%" >
   
 </p>
 
- Typical examples of fake and real news networks. (A) Schematic diagram of the propagation of a post and its re-posting. The nodes represent the users and the edges are the re-postings. The directionality determines which user is the re-poster among the two users: the origin is the former re-poster and the target is the later re-poster. A layer consists of re-postings whose re-posters have the same distance from the creator. We color the edges according to their layer from light to dark blue. (B) A real typical Weibo network of fake news with 1123 nodes. The edge’s arrow stands for its direction. This fake news is about health problems due to a milk tea shop. (C) A typical Weibo real news network with 215 nodes. This is about a tip for preventing sunstroke. (D) A typical Twitter fake news network with 199 nodes. This tweet is about an electric store that raised the price of a battery unreasonably. (E) A typical real news network on Twitter with 578 nodes. This tweet is a correction tweet against fake news about Cosmo oil by the Asahi newspaper. We applied the Fruchterman–Reingold layout by using Pajek software here
+ Examples of fake and real news diagram from the above paper mentioned. 
+ 
+ (B) Fake news example
+ (C) Real news example
+ (D) Fake news example
+ (E) Real news example
 
-Using these four methods, Our team was able to create a meaningful project which can help identify fake news and act early to prevent the spread. 
+Using these four methods, our team was able to create a meaningful project which can help identify fake news and act early to prevent the spread. 
 
 
