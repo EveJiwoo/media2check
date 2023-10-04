@@ -21,7 +21,7 @@ def get_propagation_layer(user_id, depth=1, max_depth=2):
     
     return list(propagation_layer)
 
-# Replace 'twitter_username' with the username you want to analyze
+# Placeholder 'twitter_username', input user name for analysis
 username = 'twitter_username'
 user = api.get_user(screen_name=username)
 user_id = user.id
