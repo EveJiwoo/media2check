@@ -12,10 +12,10 @@ def find_original_post(screen_name, keyword):
 
     return None
 
-# Example usage
+# Tracking original tweet information
 original_tweet = find_original_post('original_account_name', 'your_keyword')
 
 if original_tweet:
-    print(f"Original post by @{original_tweet.user.screen_name}: {original_tweet.text}")
+    print("Original post by @{original_tweet.user.screen_name}: {original_tweet.text}")
 else:
     print("Original post not found.")
