@@ -43,7 +43,5 @@ def start():  # pylint: disable=too-many-return-statements,too-many-branches
     else:
         print("No trending topics found.")
 
-
-    
     result = get_original_post()
     print result
