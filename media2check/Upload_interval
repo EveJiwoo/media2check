@@ -3,8 +3,6 @@
 
 from datetime import datetime
 
-
-
 def get_user_recent_tweets(username, count=10):
     try:
         user_tweets = api.user_timeline(screen_name=username, count=count, tweet_mode="extended")
