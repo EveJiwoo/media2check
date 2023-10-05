@@ -1,7 +1,7 @@
 # Twitter API tweepy used, credential and authenticate here removed for security reasons
 
-# Replace 'retweet_id' with the ID of the retweet you want to find the original tweet for
-retweet_id = 'your_retweet_id_here'
+# Insert twitter ID for checkup on 'id_to_check' to find the original tweet
+retweet_id = 'id_to_check'
 
 try:
     # Get the original tweet and the retweet using the retweet ID
