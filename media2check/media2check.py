@@ -1,10 +1,6 @@
 from original_post import get_original_post
 
-def start():  # pylint: disable=too-many-return-statements,too-many-branches
-    result = get_original_post()
-    print result
-    '''Starting point of the program
-    
+    '''
     Team M2C(Media2Check) wanted to apply filter model to all SNS platforms, 
     but some platforms do not provide API to access their data and we also
     have excluded platforms using image and video for future development.
@@ -28,3 +24,8 @@ def start():  # pylint: disable=too-many-return-statements,too-many-branches
     Credibility score is set for each users for future analysis.  
     
     '''
+
+def start():  # pylint: disable=too-many-return-statements,too-many-branches
+
+    result = get_original_post()
+    print result
