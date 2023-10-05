@@ -1,5 +1,5 @@
 from fetch_trending import get_trending_topics
-
+from fetch_trending import get_recent_tweets_for_topic
 from original_post import get_original_post
 
     '''
