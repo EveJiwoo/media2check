@@ -1,5 +1,5 @@
 # Function to find user's most recent 10 post upload times and interval
-# Tweepy API used here
+# Twitter API tweepy used, credential and authenticate here removed for security reasons
 
 from datetime import datetime
 
