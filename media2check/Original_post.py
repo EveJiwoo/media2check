@@ -1,3 +1,4 @@
+#Function to find whether the post is the original and if not, find the original post.
 # Twitter API tweepy used, credential and authenticate here removed for security reasons
 
 # Insert twitter ID for checkup on 'id_to_check' to find the original tweet
