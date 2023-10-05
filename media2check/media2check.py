@@ -31,7 +31,5 @@ def start():  # pylint: disable=too-many-return-statements,too-many-branches
     # Get the top trending topics
     trending_tweets = fetch_and_print_most_retweeted_tweets()
     
-
-
     result = get_original_post()
     print result
