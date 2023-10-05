@@ -1,4 +1,5 @@
 # Function to fetch top 100 trending twitter posts 
+# Twitter API tweepy used, credential and authenticate here removed for security reasons
 
 def get_trending_topics():
     try:
