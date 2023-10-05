@@ -2,24 +2,12 @@
 # Twitter API tweepy used, credential and authenticate here removed for security reasons
 
 # Insert twitter ID for checkup on 'id_to_check' to find the original tweet
-retweet_id = 'id_to_check'
-def get_original_post:
+tweet_id = 'id_to_check'
+def get_original_poster_user_id(tweet_id):
     try:
-        # Get the original tweet and the retweet using the retweet ID
-        retweet = api.get_status(id=retweet_id, tweet_mode='extended', include_entities=True)
-    
-        # Check if the tweet is a retweet; if so, find the original tweet
-        if hasattr(retweet, 'retweeted_status'):
-            original_tweet = retweet.retweeted_status
-            print("Original Tweet Text:", original_tweet.full_text)
-            print("Original Tweet User:", original_tweet.user.screen_name)
-            print("Retweet Text:", retweet.full_text)
-            print("Retweet User:", retweet.user.screen_name)
-        else:
-            # If the tweet is not a retweet, it is already the original tweet
-            print("Original Tweet Text:", retweet.full_text)
-            print("Original Tweet User:", retweet.user.screen_name)
+        tweet = api.get_status(tweet_id)
+        user_id = tweet.user.id_str  # Get the user's ID as a string
+        return user_id
     except tweepy.TweepError as e:
-        print("Error: ", str(e))
-
-    return retweet
+        print(f"Error: {e}")
+        return None
