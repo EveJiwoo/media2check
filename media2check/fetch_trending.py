@@ -6,10 +6,11 @@ import datetime
 import schedule
 import time
 
+# Using WOEID 23424977 for USA, gets top 10 trending topics
 def get_trending_topics():
     try:
-        trending_topics = api.get_place_trends(id=1)  # Using WOEID 1 for global trends
-        return trending_topics[0]['trends'][:10]  # Get the top 10 trending topics
+        trending_topics = api.get_place_trends(id=23424977)  
+        return trending_topics[0]['trends'][:10]
     except tweepy.TweepError as e:
         print(f"Error fetching trending topics: {e}")
         return []
@@ -23,7 +24,7 @@ def get_recent_tweets_for_topic(topic):
         return []
 
 
-# Define the search query for tweets with a specific hashtag or keyword
+# Define the search query for tweets which is above trending topics
 search_query = get_recent_tweets_for_topic()
 
 def fetch_and_print_most_retweeted_tweets():
