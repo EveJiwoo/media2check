@@ -1,4 +1,4 @@
-from origina_post import get_original_post
+from original_post import get_original_post
 
 def start():  # pylint: disable=too-many-return-statements,too-many-branches
     result = get_original_post()
