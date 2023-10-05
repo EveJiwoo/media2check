@@ -1,9 +1,14 @@
 # Eliminate spamming accounts by calculating average upload time interval  
 # Twitter API tweepy used, credential and authenticate here removed for security reasons
 from datetime import datetime
+from find_user import get_user_id_from_tweet_ids
+
+
+user_ids = get_user_id_from_tweet_id(tweet_id)
+
 
 # Function to check if a user's tweets are from a bot
-def is_bot(user_id):
+def is_bot(user_ids):
     try:
         # Fetch the user's timeline
         tweets = api.user_timeline(user_id, count=20)  
@@ -30,9 +35,6 @@ def is_bot(user_id):
     except tweepy.TweepError as e:
         print(f"Error: {e}")
         return False
-
-# User ID of the Twitter account you want to check
-user_id = 'id_to_check'
 
 # Check if the user is a bot
 if is_bot(user_id):
