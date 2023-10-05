@@ -17,16 +17,3 @@ def get_recent_tweets_for_topic(topic):
         print(f"Error fetching tweets for {topic}: {e}")
         return []
 
-# Get the top trending topics
-trending_topics = get_trending_topics()
-
-if trending_topics:
-    print("Top Trending Topics:")
-    for i, topic in enumerate(trending_topics, 1):
-        print(f"{i}. {topic['name']}")
-        print("   Recent Tweets:")
-        recent_tweets = get_recent_tweets_for_topic(topic['name'])
-        for j, tweet in enumerate(recent_tweets, 1):
-            print(f"   {j}. {tweet.text}\n")
-else:
-    print("No trending topics found.")
