@@ -1,3 +1,4 @@
+# Eliminate spamming accounts by calculating average upload time interval  
 # Twitter API tweepy used, credential and authenticate here removed for security reasons
 from datetime import datetime
 
@@ -5,8 +6,7 @@ from datetime import datetime
 def is_bot(user_id):
     try:
         # Fetch the user's timeline
-        tweets = api.user_timeline(user_id, count=200)  # You can adjust the count as needed
-
+        tweets = api.user_timeline(user_id, count=20)  
         # Calculate the time difference between consecutive tweets
         time_diffs = []
         for i in range(len(tweets) - 1):
@@ -32,7 +32,7 @@ def is_bot(user_id):
         return False
 
 # User ID of the Twitter account you want to check
-user_id = 'twitter_user_id'
+user_id = 'id_to_check'
 
 # Check if the user is a bot
 if is_bot(user_id):
