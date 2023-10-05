@@ -1,60 +1,29 @@
 # Function to fetch top 100 trending twitter posts and 
 # Twitter API tweepy used, credential and authenticate here removed for security reasons
 import tweepy
-from tweepy import Cursor
-import datetime
-import schedule
-import time
-
-# Using WOEID 23424977 for USA, gets top 10 trending topics
-def get_trending_topics():
-    try:
-        trending_topics = api.get_place_trends(id=23424977)  
-        return trending_topics[0]['trends'][:10]
-    except tweepy.TweepError as e:
-        print(f"Error fetching trending topics: {e}")
-        return []
-
-def get_recent_tweets_for_topic(topic):
-    try:
-        tweets = api.search(q=topic, count=100)  
-        return tweets
-    except tweepy.TweepError as e:
-        print(f"Error fetching tweets for {topic}: {e}")
-        return []
 
 
-# Define the search query for tweets which is above trending topics
-search_query = get_recent_tweets_for_topic()
+# Define the WOEID for the United States
+woeid_usa = 23424977
 
-def fetch_and_print_most_retweeted_tweets():
-    # Get the current time
-    current_time = datetime.datetime.now()
+# Function to fetch trending tweets and their Tweet IDs
+def fetch_trending_tweets(woeid, count):
+    trending_tweets = []
     
-    # Calculate the start and end times for the previous hour
-    end_time = current_time - datetime.timedelta(minutes=current_time.minute, seconds=current_time.second)
-    start_time = end_time - datetime.timedelta(hours=1)
+    # Twitter's API returns trends in batches of 50, so we need to make multiple requests
+    num_batches = count // 50
+    for _ in range(num_batches):
+        trends = api.get_place_trends(id=woeid)
+        for trend in trends[0]['trends']:
+            tweet_id = trend['tweet_volume']  # Tweet ID is stored in the 'tweet_volume' field
+            tweet_text = trend['name']
+            trending_tweets.append((tweet_id, tweet_text))
     
-    # Create a list to store the most retweeted tweets
-    most_retweeted_tweets = []
+    return trending_tweets
 
-    # Iterate through tweets matching the search query and filter by the specified hour
-    for tweet in Cursor(api.search, q=search_query, lang='en', tweet_mode='extended').items():
-        tweet_time = tweet.created_at
-        if start_time <= tweet_time <= end_time:
-            most_retweeted_tweets.append(tweet)
+# Get the top 100 trending tweets and their Tweet IDs for the specified location
+trending_tweets = fetch_trending_tweets(woeid_usa, count=100)
 
-    # Sort the list of tweets by the number of retweets in descending order
-    most_retweeted_tweets.sort(key=lambda x: x.retweet_count, reverse=True)
-
-    # Print the top 100 most retweeted tweets in the specified hour
-    for i, tweet in enumerate(most_retweeted_tweets[:100]):
-        print(f"{i + 1}. {tweet.user.screen_name}: {tweet.full_text} (Retweets: {tweet.retweet_count})")
-
-# Schedule the job to run every hour
-schedule.every().hour.do(fetch_and_print_most_retweeted_tweets)
-
-# Run the scheduler
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+# Print the trending tweets and their Tweet IDs
+for i, (tweet_id, tweet_text) in enumerate(trending_tweets):
+    print(f"{i + 1}. Tweet ID: {tweet_id}, Tweet Text: {tweet_text}")
