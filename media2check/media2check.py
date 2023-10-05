@@ -1,5 +1,4 @@
-from fetch_trending import get_trending_topics
-from fetch_trending import get_recent_tweets_for_topic
+from fetch_trending import fetch_and_print_most_retweeted_tweets
 from original_post import get_original_post
 
     '''
@@ -30,18 +29,9 @@ from original_post import get_original_post
 def start():  # pylint: disable=too-many-return-statements,too-many-branches
 
     # Get the top trending topics
-    trending_topics = get_trending_topics()
+    trending_tweets = fetch_and_print_most_retweeted_tweets()
     
-    if trending_topics:
-        print("Top Trending Topics:")
-        for i, topic in enumerate(trending_topics, 1):
-            print(f"{i}. {topic['name']}")
-            print("   Recent Tweets:")
-            recent_tweets = get_recent_tweets_for_topic(topic['name'])
-            for j, tweet in enumerate(recent_tweets, 1):
-                print(f"   {j}. {tweet.text}\n")
-    else:
-        print("No trending topics found.")
+
 
     result = get_original_post()
     print result
