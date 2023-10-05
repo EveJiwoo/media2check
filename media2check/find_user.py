@@ -1,3 +1,6 @@
+#Function to find user id from tweet id
+# Twitter API tweepy used, credential and authenticate here removed for security reasons
+
 def get_original_poster_user_id(tweet_id):
     try:
         tweet = api.get_status(tweet_id)
