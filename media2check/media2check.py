@@ -1,5 +1,7 @@
 
 def start():  # pylint: disable=too-many-return-statements,too-many-branches
+
+    
     '''Starting point of the program
     
     Team M2C(Media2Check) wanted to apply filter model to all SNS platforms, 
