@@ -1,5 +1,6 @@
-from fetch_trending import fetch_and_print_most_retweeted_tweets
-from original_post import get_original_post
+from fetch_trending import trending_tweets
+from original_post import get_original_post_user_id
+from report_rate import check_report_rate
 
     '''
     Team M2C(Media2Check) wanted to apply filter model to all SNS platforms, 
@@ -28,8 +29,25 @@ from original_post import get_original_post
 
 def start():  # pylint: disable=too-many-return-statements,too-many-branches
 
-    # Get the top trending topics
-    trending_tweets = fetch_and_print_most_retweeted_tweets()
-    
-    result = get_original_post()
+    # Get the top trending topics tweets
+    trending_tweet_ids = trending_tweets()
+   
+    # show trending tweet's id and text
+    for i, (tweet_id, tweet_text) in enumerate(trending_tweets):
+    print(f"{i + 1}. Tweet ID: {tweet_id}, Tweet Text: {tweet_text}")
+
+    # find original uploader of trending posts
+    original_upload = get_original_post_user_id()
     print result
+
+    below_threhold = check_report_rate(tweet_id)
+    print result
+
+    
+
+
+    
+
+
+
+
