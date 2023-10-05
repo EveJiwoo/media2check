@@ -1,7 +1,8 @@
+from origina_post import get_original_post
 
 def start():  # pylint: disable=too-many-return-statements,too-many-branches
-
-    
+    result = get_original_post()
+    print result
     '''Starting point of the program
     
     Team M2C(Media2Check) wanted to apply filter model to all SNS platforms, 
