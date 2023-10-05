@@ -24,7 +24,7 @@ def get_recent_tweets_for_topic(topic):
 
 
 # Define the search query for tweets with a specific hashtag or keyword
-search_query = 'YOUR_HASHTAG'
+search_query = get_recent_tweets_for_topic()
 
 def fetch_and_print_most_retweeted_tweets():
     # Get the current time
