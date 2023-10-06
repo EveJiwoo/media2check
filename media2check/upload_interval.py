@@ -1,6 +1,6 @@
 # Function to find user's most recent 10 post upload times and interval
 # Twitter API tweepy used, credential and authenticate here removed for security reasons
-
+import tweepy
 from datetime import datetime
 
 def get_user_recent_tweets(username, count=10):
