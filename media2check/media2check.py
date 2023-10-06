@@ -1,7 +1,7 @@
 from fetch_trending import trending_tweets
 from original_post import get_original_post_user_id
 from report_rate import check_report_rate
-
+from propagation_layer import get_propagation_layer
     '''
     Team M2C(Media2Check) wanted to apply filter model to all SNS platforms, 
     but some platforms do not provide API to access their data and we also
@@ -42,6 +42,14 @@ def start():  # pylint: disable=too-many-return-statements,too-many-branches
     # find original uploader of trending posts
     original_upload = get_original_post_user_id(suspicious_tweets)
     print original_upload
+
+    user = api.get_user(
+
+    propagation_layer = get_propagation_layer(original_upload, max_depth=2)
+    print(f"Propagaion Layer for {original_upload}:")
+    for i, original_upload in enumerate(propagation_layer, 1):
+        user = api.get_user(id=original_upload)
+        print(f"{i}. {user.
 
     
 
