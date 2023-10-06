@@ -1,4 +1,5 @@
 # Twitter API tweepy used, credential and authenticate here removed for security reasons
+import tweepy
 
 def get_propagation_layer(user_id, depth=1, max_depth=2):
     if depth > max_depth:
