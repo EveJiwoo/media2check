@@ -38,10 +38,10 @@ def start():  # pylint: disable=too-many-return-statements,too-many-branches
 
     # find original uploader of trending posts
     original_upload = get_original_post_user_id()
-    print result
+    print original_upload
 
     below_threhold = check_report_rate(tweet_id)
-    print result
+    print below_threshold
 
     
 
