@@ -1,3 +1,7 @@
+# Receive tweet report number using tweepy and return tweets with more than 10% report rates
+# Twitter API tweepy used, credential and authenticate here removed for security reasons
+import tweepy
+
 def check_report_rate(tweet_id):
     try:
         tweet = api.get_status(tweet_id)
