@@ -36,12 +36,18 @@ def start():  # pylint: disable=too-many-return-statements,too-many-branches
     for i, (tweet_id, tweet_text) in enumerate(trending_tweets):
     print(f"{i + 1}. Tweet ID: {tweet_id}, Tweet Text: {tweet_text}")
 
+    # find tweet id of report rate over 10% 
+    suspicious_tweets  = check_report_rate(tweet_id)
+
     # find original uploader of trending posts
-    original_upload = get_original_post_user_id()
+    original_upload = get_original_post_user_id(suspicious_tweets)
     print original_upload
 
-    below_threhold = check_report_rate(tweet_id)
-    print below_threshold
+    
+
+
+
+
 
     
 
