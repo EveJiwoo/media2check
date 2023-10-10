@@ -49,7 +49,7 @@ def start():  # pylint: disable=too-many-return-statements,too-many-branches
     print(f"Propagaion Layer for {original_upload}:")
     for i, original_upload in enumerate(propagation_layer, 1):
         user = api.get_user(id=original_upload)
-        print(f"{i}. {user.
+        print(f"{i}. {user.screen_name}")
 
     
 
