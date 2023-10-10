@@ -43,8 +43,6 @@ def start():  # pylint: disable=too-many-return-statements,too-many-branches
     original_upload = get_original_post_user_id(suspicious_tweets)
     print original_upload
 
-    user = api.get_user(
-
     propagation_layer = get_propagation_layer(original_upload, max_depth=2)
     print(f"Propagaion Layer for {original_upload}:")
     for i, original_upload in enumerate(propagation_layer, 1):
