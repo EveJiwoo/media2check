@@ -21,9 +21,9 @@ def fetch_trending_tweets(woeid, count):
     
     return trending_tweets
 
-# Get the top 100 trending tweets and their Tweet IDs for the specified location
+# Getting the top 100 trending tweets and their Tweet IDs for the specified location
 trending_tweets = fetch_trending_tweets(woeid_usa, count=100)
 
-# Print the trending tweets and their Tweet IDs
+# Printing the trending tweets and their Tweet IDs
 for i, (tweet_id, tweet_text) in enumerate(trending_tweets):
     print(f"{i + 1}. Tweet ID: {tweet_id}, Tweet Text: {tweet_text}")
