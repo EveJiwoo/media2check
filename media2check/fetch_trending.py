@@ -1,5 +1,5 @@
 # Function to fetch top 100 trending twitter posts and 
-# Twitter API tweepy used, credential and authenticate here removed for security reasons
+# (Twitter API tweepy used), Removing credential and authenticate here for security reasons
 import tweepy
 
 
