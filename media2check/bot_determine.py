@@ -1,5 +1,5 @@
-# Eliminate spamming accounts by calculating average upload time interval  
-# Twitter API tweepy used, credential and authenticate here removed for security reasons
+# Eliminating spamming accounts by calculating average upload time interval  
+# (Twitter API tweepy used), Removing credential and authenticate here for security reasons
 from datetime import datetime
 from find_user import get_user_id_from_tweet_ids
 
