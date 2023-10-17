@@ -1,5 +1,5 @@
 #Function to find user id from tweet id
-# Twitter API tweepy used, credential and authenticate here removed for security reasons
+# (Twitter API tweepy used), Removing credential and authenticate for security reasons
 import tweepy
 
 def get_user_ids_from_tweet_ids(tweet_ids):
