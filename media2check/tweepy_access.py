@@ -1,7 +1,7 @@
 #Accessing Twitter(Currently X) API
 import tweepy
 
-#Twitter credentials to access API(not shown here for security reason)
+#Accesing API using Twitter credentials (not shown here for security reason)
 consumer_key = 'our_key'
 consumer_secret = 'our_consumer_secret'
 access_token = 'our_access_token'
