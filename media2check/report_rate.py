@@ -1,5 +1,5 @@
 # Receiving tweet report number using tweepy and returning tweets with more than 10% report rates
-# (Twitter API tweepy used Removing credential and authenticate for security reasons
+# (Twitter API tweepy used) Removing credential and authenticate for security reasons
 import tweepy
 
 def check_report_rate(tweet_id):
